@@ -81,11 +81,20 @@ a:focus {
   }
 }
 
+
 html.dark {
   background-color: #0d0950;
   color: #fff;
 }
 
+.dark a {
+  color: #F9F5FF;
+}
+
 .dark .nav-links a {
   color: #fff;
+}
+
+.dark .tag {
+  background-color: #030037;
 }
