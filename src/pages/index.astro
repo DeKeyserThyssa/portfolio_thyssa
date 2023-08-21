@@ -1,12 +1,41 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from "../components/Greeting";
+import Message from "../components/Message";
+import picturePortfolio from "../assets/portfoliofoto.jpg";
 
-const pageTitle = "Home Page";
+const pageTitle = "Hello, I'm Thyssa De Keyser";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
-</BaseLayout>
+<div>
+  <BaseLayout pageTitle={pageTitle}>
+    <div class="homepage">
+      <div class="content">
+        <h2>
+          Full-stack web developer with a preference for frontend development & design
+        </h2>
+        <Message
+          client:load
+          messages={[
+            "React",
+            "Vue",
+            "Astro",
+            "Figma",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "Adobe XD",
+            "Photoshop",
+            "After Effects",
+            "Tailwind CSS",
+            "React Native",
+          ]}
+        />
+      </div>
+      <div class="image">
+        <img src={picturePortfolio} alt="Portfolio" style={{ width: '100%', maxWidth: '400px' }} />
+      </div>
+    </div>
+  </BaseLayout>
+</div>
