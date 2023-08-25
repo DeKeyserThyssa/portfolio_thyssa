@@ -1,7 +1,5 @@
 ---
 import Social from "./Social.astro";
-const platform = "github";
-const username = "DeKeyserThyssa";
 ---
 
 <style>
@@ -13,12 +11,9 @@ const username = "DeKeyserThyssa";
 </style>
 
 <footer>
-  <p>
-    Learn more about my projects on <a
-      href={`https://www.${platform}.com/${username}`}>{platform}</a
-    >!
-  </p>
-  <Social platform="linkedin" username="in/thyssa-de-keyser-b03b3224a/" />
-  <Social platform="github" username="DeKeyserThyssa" />
-  <!-- <Social platform="youtube" username="astrodotbuild" /> -->
+  <p>Thyssa De Keyser © 2022</p>
+  <nav class="footerLinks">
+    <Social platform="linkedin" username="in/thyssa-de-keyser-b03b3224a/"/>
+    <Social platform="github" username="DeKeyserThyssa"/>
+  </nav>
 </footer>

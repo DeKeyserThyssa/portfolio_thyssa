@@ -4,15 +4,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Message from "../components/Message";
 import picturePortfolio from "../assets/portfoliofoto.jpg";
 
-const pageTitle = "Hello, I'm Thyssa De Keyser";
+const pageTitle = "Hi, I'm Thyssa De Keyser";
 ---
 
 <div>
   <BaseLayout pageTitle={pageTitle}>
     <div class="homepage">
-      <div class="content">
+      <div>
         <h2>
-          Full-stack web developer with a preference for frontend development & design
+          Full-stack web developer <br> with a preference for frontend development &
+          design
         </h2>
         <Message
           client:load
@@ -33,8 +34,8 @@ const pageTitle = "Hello, I'm Thyssa De Keyser";
           ]}
         />
       </div>
-      <div class="image">
-        <img src={picturePortfolio} alt="Portfolio" style={{ width: '100%', maxWidth: '400px' }} />
+      <div >
+        <img src={picturePortfolio} alt="Portfolio" class="portfolioImage"/>
       </div>
     </div>
   </BaseLayout>

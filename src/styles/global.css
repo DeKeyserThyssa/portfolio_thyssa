@@ -20,9 +20,40 @@ h1 {
   font-size: 2.5rem;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+.footerLinks {
+  display: flex;
+  align-items: center;
+}
+
 .homepage {
   display: flex;
   flex-direction: row;
+}
+
+.portfolioImage {
+  width: 60%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.socialLink {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  color: #fff;
+  background-color: #4c1d95;
+  text-decoration: none;
+}
+
+.socialIcon {
+  margin-right: 0.5rem;
 }
 
 /* nav styles */
@@ -86,14 +117,13 @@ a:focus {
   }
 }
 
-
 html.dark {
   background-color: #0d0950;
   color: #fff;
 }
 
 .dark a {
-  color: #F9F5FF;
+  color: #f9f5ff;
 }
 
 .dark .nav-links a {
@@ -102,4 +132,9 @@ html.dark {
 
 .dark .tag {
   background-color: #030037;
+}
+
+.dark .socialLink {
+  color: #4c1d95;
+  background-color: #f9f5ff;
 }
