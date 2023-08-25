@@ -1,19 +1,20 @@
 ---
-const {platform, username} = Astro.props;
+const { platform, username } = Astro.props;
+import { Linkedin, Github } from 'lucide-astro';
+
+interface PlatformIcons {
+  [key: string]: any;
+}
+
+const platformIcons: PlatformIcons = {
+  linkedin: Linkedin,
+  github: Github,
+};
+const SocialIcon = platformIcons[platform.toLowerCase()];
+
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
-
-<style>
-  a {
-    padding: 0.5rem 1rem;
-    color: #fff;
-    background-color: #4c1d95;
-    text-decoration: none;
-  }
-
-  html.dark a {
-    color: #4c1d95;
-    background-color: #F9F5FF;
-  }
-</style>
+<a href={`https://www.${platform}.com/${username}`} class="socialLink">
+  {platformIcons[platform.toLowerCase()] && <SocialIcon />}
+  {platform}
+</a>
