@@ -5,7 +5,7 @@ export async function get() {
   const posts = await getCollection("posts");
   return rss({
     title: "Thyssa De Keyser",
-    description: "My journey learning Astro",
+    description: "Portfolio of Thyssa De Keyser",
     site: "https://thyssadekeyser.netlify.app/",
     items: posts.map(post => ({
       title: post.data.title,
