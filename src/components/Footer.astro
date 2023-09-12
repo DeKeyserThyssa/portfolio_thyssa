@@ -1,5 +1,6 @@
 ---
 import Social from "./Social.astro";
+const currentYear = new Date().getFullYear();
 ---
 
 <style>
@@ -11,7 +12,7 @@ import Social from "./Social.astro";
 </style>
 
 <footer>
-  <p>Thyssa De Keyser © 2022</p>
+  <p>Thyssa De Keyser © {currentYear}</p>
   <nav class="footerLinks">
     <Social platform="linkedin" username="in/thyssa-de-keyser-b03b3224a/"/>
     <Social platform="github" username="DeKeyserThyssa"/>

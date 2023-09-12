@@ -21,7 +21,7 @@ h1 {
 }
 
 header {
-  padding: 2rem;
+  padding-top: 0.5rem;
 }
 
 nav {
@@ -71,19 +71,29 @@ footer {
   cursor: pointer;
 }
 
-.hamburger .line {
+.line {
   display: block;
   width: 40px;
   height: 5px;
-  margin-bottom: 10px;
   background-color: #4c1d95;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.line1 {
+  transform: translateY(-4px);
+}
+
+.line3 {
+  transform: translateY(4px);
 }
 
 .nav-links {
   width: 100%;
-  background-color: #f9f5ff;
   display: none;
+  transition: 0.3s ease;
   margin: 0;
+  color: #000;
 }
 
 .nav-links a {
@@ -94,6 +104,7 @@ footer {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
+  color: #000;
 }
 
 .nav-links a:hover,
@@ -102,23 +113,34 @@ a:focus {
 }
 
 .logo {
-  width: 10rem;
   fill: #000;
 }
 
-.dark .logo {
-  fill: #fff;
+.expanded {
+  display: block;
+  position: absolute;
+  background-color: #f1f5f9;
+  border: 1px solid #4c1d95;
+  margin-top: 200px;
+  width: 90%;
 }
 
-.expanded {
-  display: unset;
+.is-active .line1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.is-active .line2 {
+  opacity: 0;
+}
+
+.is-active .line3 {
+  transform: translateY(-6px) rotateZ(45deg);
 }
 
 @media screen and (min-width: 636px) {
   .nav-links {
     margin-left: 5em;
     display: block;
-    position: static;
     width: auto;
     background: none;
   }
@@ -126,6 +148,7 @@ a:focus {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+    color: #000;
   }
 
   .hamburger {
@@ -151,6 +174,10 @@ html.dark {
 
 .dark a {
   color: #f9f5ff;
+}
+
+.dark .logo {
+  fill: #fff;
 }
 
 .dark .nav-links a {
