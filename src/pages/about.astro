@@ -2,25 +2,57 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
-const happy = true;
-const finished = true;
-const goal = 3;
 
 const identity = {
   firstName: "Thyssa",
+  education: "MCT",
   country: "Waregem",
   occupation: "Full Stack Web Developer",
-  hobbies: ["playing with my dog", "guitar", "walking"],
 };
 
-const skills = [
+const frontendSkills = [
   "HTML",
   "CSS",
   "JavaScript",
   "TypeScript",
-  "React",
+  "React (Native)",
   "Vue",
+  "SCSS / SASS",
+  "Tailwind CSS",
   "Astro",
+];
+
+const designSkills = [
+  "Adobe XD",
+  "Figma",
+  "Illustrator",
+  "Photoshop",
+  "After Effects",
+  "Premiere Pro",
+];
+
+const backendSkills = ["ASP.NET", "C#", "NestJS", "MongoDB", "MySQL", "Docker"];
+
+const personalSkills = [
+  "Eager to learn",
+  "Patient",
+  "Team player",
+  "Creative",
+  "Flexible",
+  "Stress resistant",
+  "Responsible",
+  "Organized",
+];
+
+const otherSkills = [
+  "Git",
+  "GitHub / GitLab",
+  "Microsoft Office",
+  "Azure",
+  "Jira",
+  "Confluence",
+  "Agile",
+  "Scrum",
 ];
 
 const skillColor = "navy";
@@ -29,32 +61,79 @@ const textCase = "uppercase";
 ---
 
 <style define:vars={{skillColor, fontWeight, textCase}}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
   .skill {
     color: var(--skillColor);
     font-weight: var(--fontWeight);
     text-transform: var(--textCase);
   }
+  .skillTitle {
+    color: var(--skillColor);
+  }
   html.dark .skill {
     color: #31a9ff;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(
+        3,
+        1fr
+      ); /* Hiermee worden 3 kolommen gemaakt */
+      grid-gap: 20px; /* Ruimte tussen de kolommen */
+    }
   }
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
   <p>
-    Hi, I'm <span class="skill">{identity.firstName}</span> and I'm from{" "}
-    <span class="skill">{identity.country}</span>. I'm a{" "}
-    <span class="skill">{identity.occupation}</span> and I love{" "}
-    <span class="skill">{identity.hobbies[0]}</span>,{" "}
-    <span class="skill">{identity.hobbies[1]}</span> and{" "}
-    <span class="skill">{identity.hobbies[2]}</span> in my free time.
+    Hi, I'm <span class="skill">{identity.firstName}</span>, a recent graduate
+    with a degree in <a href="https://mct.be/"
+      ><span class="skill">{identity.education}</span></a
+    > from Howest in Kortrijk. I'm a passionate
+    <span class="skill">{identity.occupation}</span> based in <span
+      class="skill">{identity.country}</span
+    >. I am driven by a strong desire to continuously expand my knowledge and
+    skills.
   </p>
   <p>
-    <ul>
-      {skills.map(skill => <li class="skill">{skill}</li>)}
-    </ul>
+    Beyond coding, I enjoy spending time with my four-legged friend, playing on
+    my guitar and finding relaxation in nature through relaxing walks.
+    Additionally, I have a passion for travel and have had the opportunity to
+    explore the IT landscape during a study trip to San Francisco, where I
+    visited various IT companies.
   </p>
+  <p>Below, you'll discover my skills:</p>
+  <div class="container">
+    <div>
+      <h2 class="skillTitle">Frontend</h2>
+      <ul>
+        {frontendSkills.map(skill => <li class="skill">{skill}</li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="skillTitle">Design</h2>
+      <ul>
+        {designSkills.map(skill => <li class="skill">{skill}</li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="skillTitle">Backend</h2>
+      <ul>
+        {backendSkills.map(skill => <li class="skill">{skill}</li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="skillTitle">Other skills</h2>
+      <ul>
+        {otherSkills.map(skill => <li class="skill">{skill}</li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="skillTitle">Personal skills</h2>
+      <ul>
+        {personalSkills.map(skill => <li class="skill">{skill}</li>)}
+      </ul>
+    </div>
+  </div>
 </BaseLayout>
